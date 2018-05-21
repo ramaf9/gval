@@ -132,7 +132,7 @@ func variable(path ...Evaluable) Evaluable {
 					continue
 				}
 			}
-			return nil, fmt.Errorf("unknown parameter %s", strings.Join(keys[:i+1], "."))
+			return nil, nil
 		}
 		return v, nil
 	}
