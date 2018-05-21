@@ -6,7 +6,6 @@ import (
 	"reflect"
 	"regexp"
 	"strconv"
-	"strings"
 )
 
 // Evaluable evaluates given parameter
@@ -94,7 +93,7 @@ func variable(path ...Evaluable) Evaluable {
 			}
 			keys[i] = k
 		}
-		for i, k := range keys {
+		for _, k := range keys {
 			switch o := v.(type) {
 			case map[string]interface{}:
 				if c, ok := o[k]; ok {
